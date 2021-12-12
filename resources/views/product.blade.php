@@ -6,14 +6,14 @@
         <h1>Showing All Products</h1>
     @else
         <h1>{{ $result }}</h1>
-    @endif      
+    @endif
 </div>
 <div class="list-product">
     <div class="list-product-container">
         @foreach ($product as $item)
         {{-- css ada di custom.style.css --}}
 
-        
+        @if ($item->name != 'Custom PC')
             <div class="card" style="width: 20rem;">
                 <div class="size-img">
                     <img src="{{ asset('storage/'. $item->image) }}" class="card-img-top">
@@ -26,6 +26,7 @@
                     </div>
                 </div>
             </div>
+        @endif
 
         @endforeach
         <div class="clear"></div>
